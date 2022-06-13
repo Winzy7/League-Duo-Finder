@@ -10,7 +10,10 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+        /** Uncomment this to hide names of every screen */
+          //screenOptions={{headerShown: false}}
+        >
           <Stack.Screen
           name = "Home"
           component={HomeScreen}
