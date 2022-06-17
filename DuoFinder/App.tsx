@@ -75,6 +75,7 @@ const Blank = ({ navigation }) => {
     </View>
   )
 }
+
 const HomeScreen = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
   console.log({text});
@@ -102,6 +103,29 @@ const HomeScreen = ({ navigation }) => {
   )
 }
 
+const changePressableColor = (currentColor, changeColor) =>
+  {
+    if (currentColor == "FFFFFF") {
+      changeColor("#08B3F3")
+    }
+    else if (currentColor == "#08B3F3") {
+      changeColor("#ff0000")
+    }
+    else {
+      changeColor("#08B3F3")
+    }
+  }
+
+const Pressables = () => {
+  const [color, onChangeColor] = React.useState("FFFFFF")
+  return (
+  <View style= {styles.container}>
+    <Pressable 
+      onPress={() => changePressableColor(color, onChangeColor)}>
+    </Pressable>
+  </View>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
